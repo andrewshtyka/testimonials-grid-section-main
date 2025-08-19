@@ -103,9 +103,6 @@ table {
   width: 100%;
 }
 
-@media (min-width: 48rem) {
-}
-
 /* #endregion = GLOBAL */
 
 .u-text-preset-1 {
@@ -199,4 +196,77 @@ main {
 
 .u-font_color\:purple-50 {
   color: $color-purple-50;
+}
+
+@media (min-width: 768px) {
+  main {
+    display: flex;
+    justify-content: center;
+    padding: clamp(4.5rem, calc(2rem + 7vw), 5rem) clamp(4rem, calc(0.5rem + 7vw), 8rem);
+  }
+
+  .o-container_cards {
+    display: grid;
+    grid-template: repeat(4, auto) / repeat(2, 1fr);
+    grid-template-areas:
+      "row-1 row-1"
+      "row-2L row-2R"
+      "row-3 row-3"
+      "row-4 row-4";
+    max-width: 50rem;
+  }
+
+  .c-card:nth-of-type(1) {
+    grid-area: row-1;
+  }
+
+  .c-card:nth-of-type(2) {
+    grid-area: row-2L;
+  }
+
+  .c-card:nth-of-type(3) {
+    grid-area: row-2R;
+  }
+
+  .c-card:nth-of-type(4) {
+    grid-area: row-3;
+  }
+
+  .c-card:nth-of-type(5) {
+    grid-area: row-4;
+  }
+}
+
+@media (min-width: 1200px) {
+  main {
+    align-items: center;
+  }
+
+  .o-container_cards {
+    grid-template: repeat(2, auto) / repeat(4, 1fr);
+    grid-template-areas:
+      "top-1 top-1 top-2 right"
+      "bottom-1 bottom-2 bottom-2 right";
+    max-width: 70rem;
+  }
+
+  .c-card:nth-of-type(1) {
+    grid-area: top-1;
+  }
+
+  .c-card:nth-of-type(2) {
+    grid-area: top-2;
+  }
+
+  .c-card:nth-of-type(3) {
+    grid-area: bottom-1;
+  }
+
+  .c-card:nth-of-type(4) {
+    grid-area: bottom-2;
+  }
+
+  .c-card:nth-of-type(5) {
+    grid-area: right;
+  }
 }
