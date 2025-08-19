@@ -267,6 +267,7 @@ main {
     grid-template-areas:
       "top-1 top-1 top-2 right"
       "bottom-1 bottom-2 bottom-2 right";
+      gap: 1.5rem;
     max-width: 70rem;
   }
 
